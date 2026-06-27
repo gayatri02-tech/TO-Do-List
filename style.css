@@ -1,0 +1,27 @@
+body{
+    background-color: #212121;
+    
+}
+
+.card{
+background-color: #212121;
+color: #fff;
+padding: 50px;
+margin-top: 200px;
+margin-left: 500px;
+}
+
+.card-header{
+    text-align: center;
+    font-size:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.card-title{
+    display: flex;
+    gap: 10px;
+}
+
+
+
+

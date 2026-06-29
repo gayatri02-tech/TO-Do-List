@@ -21,13 +21,14 @@ function addTask() {
 
     // Complete task
     span.addEventListener("click", () => {
-        span.classList.toggle("completed");
+        span.classList.toggle("completed");  
     });
 
     // Delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
-    deleteBtn.className ="btn btn-outline-info";
+    deleteBtn.className="btn btn-outline-info";
+    deleteBtn.style.marginLeft ="10px";
     
 
     deleteBtn.addEventListener("click", () => {
@@ -36,19 +37,26 @@ function addTask() {
 
     //Edit and Save Button
 
-   const EditBtn  = document.createElement("button");
+    let editing = false;
+  const EditBtn  = document.createElement("button");
    EditBtn.textContent ="Edit";
    EditBtn.className ="btn btn-outline-info";
+   EditBtn.style.marginLeft = "10px";
+    
 
-   EditBtn.addEventListener('click',function () {
-    span.contentEditable = true;
+   EditBtn.addEventListener('click', () => {
+    if (!editing) {
+        span.contentEditable = true;
     span.focus();
     EditBtn.textContent ="Save";
-
-    EditBtn.addEventListener('click',function () {
-        span.contentEditable = false;
+    editing = true;
+        
+    }else{
+         span.contentEditable = false;
         EditBtn.textContent ="Edit";  
-    });  
+        editing = false;
+    
+    }
 
    });
 
